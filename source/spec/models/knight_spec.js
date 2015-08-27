@@ -12,4 +12,23 @@ describe('Knight', function() {
 
     expect(enemy.health()).toEqual(950);
   });
+
+  describe("when defending", function() {
+    beforeEach(function() {
+      knight.defend();
+    });
+    
+    it("should take no damage from attacks", function() {
+      enemy.attack(knight);
+
+      expect(knight.health()).toEqual(1000);
+    });
+
+    it("should take damage on subsequent attacks, after successfully blocking an attack", function() {
+      enemy.attack(knight);
+      enemy.attack(knight);
+
+      expect(knight.health()).toEqual(950);
+    });
+  });
 });
