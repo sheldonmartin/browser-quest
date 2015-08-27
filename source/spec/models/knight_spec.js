@@ -31,4 +31,30 @@ describe('Knight', function() {
       expect(knight.health()).toEqual(950);
     });
   });
+
+  describe("when running", function() {
+    beforeEach(function() {
+      knight.run();
+    });
+
+    it("should take 50% more damage", function() {
+      enemy.attack(knight);
+
+      expect(knight.health()).toEqual(925);
+    });
+
+    it("should stop running and take normal damage when they attack", function() {
+      knight.attack(enemy);
+      enemy.attack(knight);
+
+      expect(knight.health()).toEqual(950);
+    });
+
+    it("should stop running and take normal damage when they defend", function() {
+      knight.defend();
+      enemy.attack(knight);
+
+      expect(knight.health()).toEqual(950);
+    });
+  });
 });
