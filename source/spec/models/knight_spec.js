@@ -56,11 +56,11 @@ describe('Knight', function() {
       expect(knight.health()).toEqual(950);
     });
 
-    it("should stop running and take normal damage when they defend", function() {
+    it("should stop running and take no damage when they defend", function() {
       knight.defend();
       enemy.attack(knight);
 
-      expect(knight.health()).toEqual(950);
+      expect(knight.health()).toEqual(1000);
     });
   });
 });
