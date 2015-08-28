@@ -1,6 +1,8 @@
 describe('Knight', function() {
   var Knight = require('../../lib/models/knight.js');
   var Enemy = require('../../lib/models/knight.js');
+  var knight;
+  var enemy;
 
   beforeEach(function() {
     knight = Knight();
