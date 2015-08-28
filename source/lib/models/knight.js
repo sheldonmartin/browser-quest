@@ -6,6 +6,7 @@ var Knight = function() {
 
   function attack(target) {
     target.takeDamage(damage);
+    running = false;
   }
 
   function takeDamage(damage) {
