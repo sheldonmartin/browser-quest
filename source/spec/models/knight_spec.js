@@ -13,6 +13,12 @@ describe('Knight', function() {
     expect(enemy.health()).toEqual(950);
   });
 
+  it("should be able to take damage from enemies when attacked", function() {
+    enemy.attack(knight);
+
+    expect(knight.health()).toEqual(950);
+  })
+
   describe("when defending", function() {
     beforeEach(function() {
       knight.defend();
