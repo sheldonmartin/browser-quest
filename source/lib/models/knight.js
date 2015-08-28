@@ -28,6 +28,7 @@ var Knight = function() {
 
   function defend() {
     defending = true;
+    running = false;
   }
 
   function run() {
