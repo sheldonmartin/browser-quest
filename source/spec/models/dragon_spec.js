@@ -6,12 +6,12 @@ describe('Dragon', function() {
 
   beforeEach(function() {
     dragon = Dragon();
-      enemy = Enemy();
+    enemy = Enemy();
   });
 
   it("should be able to attack and cause damage to enemies", function() {
     dragon.attack(enemy);
 
-    expect(dragon.health()).toEqual(4950);
+    expect(enemy.health()).toEqual(4950);
   });
 });
