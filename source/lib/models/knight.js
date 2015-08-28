@@ -2,18 +2,23 @@ var Knight = function() {
   var damage = 50;
   var vitality = 1000;
   var defending = false;
+  var running = false;
 
   function attack(target) {
     target.takeDamage(damage);
   }
 
   function takeDamage(damage) {
+    var damageModifier = 1;
+
     if (defending) {
+      damageModifier = 0;
       defending = false;
-      return;
+    } else if (running) {
+      damageModifier = 1.5;
     }
 
-    vitality -= damage;
+    vitality -= (damage * damageModifier);
   }
 
   function health() {
@@ -24,11 +29,16 @@ var Knight = function() {
     defending = true;
   }
 
+  function run() {
+    running = true;
+  }
+
   return {
     attack: attack,
     takeDamage: takeDamage, 
     health: health,
-    defend: defend
+    defend: defend,
+    run: run
   }
 }
 
