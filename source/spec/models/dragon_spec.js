@@ -14,4 +14,10 @@ describe('Dragon', function() {
 
     expect(enemy.health()).toEqual(4950);
   });
+
+  it("should be able to take damage from enemies when attacked", function() {
+    enemy.attack(dragon);
+
+    expect(enemy.health()).toEqual(4950);
+  })
 });
