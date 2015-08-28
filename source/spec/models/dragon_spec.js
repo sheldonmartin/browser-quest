@@ -19,5 +19,11 @@ describe('Dragon', function() {
     enemy.attack(dragon);
 
     expect(dragon.health()).toEqual(4950);
-  })
+  });
+
+  it("should be able to attack with fire breath", function() {
+    dragon.attack(enemy, 'fire breath');
+
+    expect(enemy.health()).toEqual(4850);
+  });
 });
