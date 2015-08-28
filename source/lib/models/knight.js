@@ -8,8 +8,11 @@ var Knight = function() {
   }
 
   function takeDamage(damage) {
-    if (defending) return;
-    
+    if (defending) {
+      defending = false;
+      return;
+    }
+
     vitality -= damage;
   }
 
