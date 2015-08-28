@@ -1,12 +1,15 @@
 var Knight = function() {
   var damage = 50;
   var vitality = 1000;
+  var defending = false;
 
   function attack(target) {
     target.takeDamage(damage);
   }
 
   function takeDamage(damage) {
+    if (defending) return;
+    
     vitality -= damage;
   }
 
@@ -14,10 +17,15 @@ var Knight = function() {
     return vitality;
   }
 
+  function defend() {
+    defending = true;
+  }
+
   return {
     attack: attack,
     takeDamage: takeDamage, 
-    health: health
+    health: health,
+    defend: defend
   }
 }
 
