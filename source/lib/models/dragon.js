@@ -2,8 +2,12 @@ var Dragon = function() {
   var damage = 50;
   var vitality = 5000;
 
-  function attack(target) {
-    target.takeDamage(damage);
+  function attack(target, attackName) {
+    if (attackName === 'fire breath') {
+      target.takeDamage(damage * 3);
+    } else {
+      target.takeDamage(damage);  
+    }
   }
 
   function takeDamage(damage) {
